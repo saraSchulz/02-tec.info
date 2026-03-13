@@ -1,82 +1,97 @@
-<script setup>
-import { ref } from "vue"
-const nome = ref('Sara Schulz');
-const contador = ref(0);
+<!-- eslint-disable vue/block-lang -->
+<script setup >
+  import { ref } from 'vue';
+  const contador = ref(0);
+  const num = ref(5);
 
-function incrementar(){
-    if(contador.value < 10){
-    contador.value++
+  function incrementar() {
+    if (contador.value + num.value >= 10) {
+      contador.value = 10;
+    }else{
+      contador.value = contador.value + num.value;
     }
-}
-function decrementar(){
+  }
 
-    if(contador.value > 0 ){
-    contador.value--
+  function decrementar() {
+    if (contador.value - num.value <= 0) {
+      contador.value = 0;
+    }else{
+      contador.value = contador.value - num.value;
     }
-}
+  }
 </script>
 
 <template>
-<div class="geral">
-<h1>Contador de {{ nome }}</h1>
-<div class="contadorValor">
-
-  <p>Valor do Contador: <span> {{ contador }}</span></p>
-  <button @click="incrementar" class="mais" :disabled="contador >= 10">+</button>
-  <button @click="decrementar" class="menos" :disabled="contador <= 0">-</button>
-
-</div>
-</div>
+  <div class="container">
+    <h1>Valor do Contador: {{ contador }}</h1>
+    <div class="input">
+      <label for="valor">Valor a incrementar/decrementar:</label>
+      <input type="number" v-model="num" max="10" min="1">
+    </div>
+    <div >
+      <button @click="incrementar" :disabled="contador >= 10">Incrementar</button>
+      <button @click="decrementar" :disabled="contador <= 0">Decrementar</button>
+    </div>
+    <div v-if="contador === 10" class="msg">
+      <p>O contador está  no máximo!</p>
+    </div>
+    <div v-if="contador === 0" class="msg">
+      <p>O contador esta no mínimo!</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.geral{
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 h1{
-  font-size: 80;
-  color: #ff5e00;
-  font-weight: bold;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
-  transition: all 1.5s ease;
-  margin: 20px;
+  font-size: 25px;
+  color: #58fcff;
 }
-h1:hover{
-  color: #ff00ff;
+.input{
+  font-size: 15px;
 }
-p{
-  font-size: 70;
-  color: #ffffff;
-  font-weight: bold;
-  text-align: center;
-  & span{
-    color: #ff0000;
+label{
+    color: #5c7879;
   }
-}
-
-button.mais{
-    color: #0004ff
+input{
+    text-align: center;
+    margin: 2px;
+    background:#222;
+    color:white;
+    border:1px solid #444;
+    padding:5px;
+    border-radius: 5px;
   }
-button.menos{
-    color:#ff0000
+
+  button{
+    background:#222;
+    color:white;
+    border:1px solid #444;
+    padding:5px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
-button{
-  background: none;
-  border: none;
-  padding: 5 10;
-  font-weight: bold;
-  text-align: center;
-  transition: all 0.2s ease;
-  margin: 20px;
-  box-shadow:  0 0 7px rgba(0, 0, 0, 0.8);
-  border-radius: 5px;
-
-}
-button:disabled{
-  color: #585858;
-  background-color: #585858;
-}
-
+  button:hover{
+    background: #005052 ;
+  }
+  button:disabled{
+    background-color: #4d4d4d ;
+    color: #000;
+    cursor: default;
+  }
+  .msg{
+    background: #58fcff;
+    color: #222;
+    padding: 0 5px;
+    border-radius: 5px;
+    margin: 10px;
+  }
 </style>

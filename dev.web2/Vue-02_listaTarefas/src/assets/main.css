@@ -1,0 +1,11 @@
+@import './base.css';
+
+body{
+  background-color: #222222;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
