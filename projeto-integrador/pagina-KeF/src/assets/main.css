@@ -1,0 +1,24 @@
+@import './base.css';
+body {
+  background: #521D00;
+  margin: 0;
+  padding: 0;
+  font-family: "Marcellus SC", serif;
+}
+section{
+  width: 100%;
+  margin: 0;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.7s ease ;
+}
+a:hover{
+  color: #000;
+}
+& button{
+    font-family: "Marcellus SC", serif;
+    cursor: pointer;
+}
