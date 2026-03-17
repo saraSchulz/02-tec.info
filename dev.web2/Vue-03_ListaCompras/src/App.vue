@@ -1,58 +1,101 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+const filtro = ref('');
 let tarefas = ref([
   { id: 1, desc: 'Estudar VueJS', status: 'pendente' },
-  { id: 2, desc: 'Fazer tudo-list', status: 'pendente' },
-  { id: 3, desc: 'Deploy contador Vue', status: 'concluida' }
-]);
-let novaTarefa = ref('');
-const alteracao = ref(-1);
+ { id: 2, desc: 'Fazer tudo-list', status: 'pendente' },
+ { id: 3, desc: 'Deploy contador Vue', status: 'concluida' }
+ ]);
+ let novaTarefa = ref('');
+ const alteracao = ref(-1);
+ const aviso = ref(false);
+//Filtro
+let tarefasFiltradas = computed(() => {
+   if (filtro.value.trim().length > 0) {
+     return tarefas.value.filter(tarefa => tarefa.desc.includes(filtro.value));
+   } else {
+     return tarefas.value;
+   }
+ });
+//Tarefas
+ let maiorId = Math.max(...tarefas.value.map(tarefa => tarefa.id));
+ function adicionarTarefa() {
+   if (novaTarefa.value.trim().length < 5) {
+     aviso.value = true;
+   }
+   else{
+    if(alteracao.value == -1){
 
-let maiorId = Math.max(...tarefas.value.map(item => item.id));
-function adicionarTarefa() {
-  tarefas.value.push({ id: maiorId + 1, desc: novaTarefa.value, status: 'pendente' });
+     tarefas.value.push({ id: maiorId + 1, desc: novaTarefa.value, status: 'pendente' });
+   novaTarefa.value = '';
+     } else{
+  tarefas.value.splice(alteracao.value, 1, {
+    id: tarefas.value[alteracao.value].id,
+    desc: novaTarefa.value,
+    status: tarefas.value[alteracao.value].status
+  });
+
   novaTarefa.value = '';
+  alteracao.value = -1;
 }
-function marcarConcluida(id) {
-  const posicao = tarefas.value.findIndex(item => item.id === id);
-  tarefas.value[posicao].status = 'concluida';
-}
-function marcarPendente(id) {
-  const posicao = tarefas.value.findIndex(item => item.id === id);
-  tarefas.value[posicao].status = 'pendente';
-}
-function editarTarefa(item) {
-  alteracao.value = tarefas.value.indexOf(item);
-  novaTarefa.value = item;
+   }
 }
 
+
+//Status
+ function marcarConcluida(id) {
+   const posicao = tarefas.value.findIndex(tarefa => tarefa.id === id);
+   tarefas.value[posicao].status = 'concluida';
+ }
+ function marcarPendente(id) {
+   const posicao = tarefas.value.findIndex(tarefa => tarefa.id === id);
+   tarefas.value[posicao].status = 'pendente';
+ }
+
+//Editar & excluir
+function editarTarefa(tarefa){
+  alteracao.value = tarefas.value.indexOf(tarefa);
+  novaTarefa.value = tarefa.desc;
+}
+//function deleteTarefa(tarefa) {
+//  const posicao = tarefas.value.indexOf(tarefa);
+//  tarefas.value.splice(posicao, 1);
+//}
 </script>
 
 <template>
-  <div class="container">
+   <div class="container">
     <h1>Lista de tarefas</h1>
     <div class="add">
       <label for="text">Adicionar nova tarefa:</label>
+
       <input type="text" id="text" placeholder="Descrição da tarefa" v-model="novaTarefa"
-        @keyup.enter="adicionarTarefa">
+        @keyup.enter="adicionarTarefa"
+        >
+
       <button @click="adicionarTarefa">Adicionar</button>
+
+      <div v-show="aviso" class="aviso">Digite ao menos 5 caracteres!</div>
     </div>
+
     <ul>
-      <li v-for="item in tarefas" :key="item.id" @click="{
-        if (item.status === 'pendente') {
-          marcarConcluida(item.id);
-        } else {
-          marcarPendente(item.id);
-        }
-      }" :class="{
-      'concluida': item.status === 'concluida'
-    }">
-        {{ item.desc }} <span class="status">| {{ item.status }}</span>
+      <li v-for="tarefa in tarefasFiltradas" :key="tarefa.id">
+        <span @click="{
+          if (tarefa.status === 'pendente') {
+            marcarConcluida(tarefa.id);
+          } else {
+            marcarPendente(tarefa.id);
+          }
+        }" :class="{
+        'concluida': tarefa.status === 'concluida'
+      }">
+          {{ tarefa.desc }}</span> <span class="status"> | {{ tarefa.status }}</span>
         <span>
-          <a href="#" @click.prevent="editarTarefa(item)" class="editar"> Editar </a>
-          <a href="#" @click.prevent="deleteTarefa(item)" class="deletar"> Delete </a>
+          <a href="#" @click.prevent="editarTarefa(tarefa)" class="editar"> Editar </a>
+          <!-- <a href="#" @click.prevent="deleteTarefa(tarefa)" class="deletar"> Delete </a> -->
         </span>
       </li>
+      <input type="text" placeholder="Filtrar Tarefas" v-model="filtro" class="filtro">
     </ul>
   </div>
 </template>
@@ -104,7 +147,7 @@ ul {
     font-size: 18px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-tarefas: center;
     cursor: pointer;
 
     & .status {
@@ -123,4 +166,13 @@ ul {
   }
 
 }
+
+.filtro {
+  padding: 10px;
+  font-size: 16px;
+  border: 1.5px solid #ffc290;
+  border-radius: 4px;
+  text-align: center;
+}
 </style>
+
