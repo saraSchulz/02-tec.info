@@ -3,75 +3,74 @@ import { computed, ref } from 'vue'
 const filtro = ref('');
 let tarefas = ref([
   { id: 1, desc: 'Estudar VueJS', status: 'pendente' },
- { id: 2, desc: 'Fazer tudo-list', status: 'pendente' },
- { id: 3, desc: 'Deploy contador Vue', status: 'concluida' }
- ]);
- let novaTarefa = ref('');
- const alteracao = ref(-1);
- const aviso = ref(false);
+  { id: 2, desc: 'Fazer tudo-list', status: 'pendente' },
+  { id: 3, desc: 'Deploy contador Vue', status: 'concluida' }
+]);
+let novaTarefa = ref('');
+const alteracao = ref(-1);
+const aviso = ref(false);
 //Filtro
 let tarefasFiltradas = computed(() => {
-   if (filtro.value.trim().length > 0) {
-     return tarefas.value.filter(tarefa => tarefa.desc.includes(filtro.value));
-   } else {
-     return tarefas.value;
-   }
- });
+  if (filtro.value.trim().length > 0) {
+    return tarefas.value.filter(tarefa => tarefa.desc.includes(filtro.value));
+  } else {
+    return tarefas.value;
+  }
+});
 //Tarefas
- let maiorId = Math.max(...tarefas.value.map(tarefa => tarefa.id));
- function adicionarTarefa() {
-   if (novaTarefa.value.trim().length < 5) {
-     aviso.value = true;
-   }
-   else{
-    if(alteracao.value == -1){
+let maiorId = Math.max(...tarefas.value.map(tarefa => tarefa.id));
+function adicionarTarefa() {
+  if (novaTarefa.value.trim().length < 5) {
+    aviso.value = true;
+  }
+  else {
+    if (alteracao.value == -1) {
 
-     tarefas.value.push({ id: maiorId + 1, desc: novaTarefa.value, status: 'pendente' });
-   novaTarefa.value = '';
-     } else{
-  tarefas.value.splice(alteracao.value, 1, {
-    id: tarefas.value[alteracao.value].id,
-    desc: novaTarefa.value,
-    status: tarefas.value[alteracao.value].status
-  });
+      tarefas.value.push({ id: maiorId + 1, desc: novaTarefa.value, status: 'pendente' });
+      novaTarefa.value = '';
+    } else {
+      tarefas.value.splice(alteracao.value, 1, {
+        id: tarefas.value[alteracao.value].id,
+        desc: novaTarefa.value,
+        status: tarefas.value[alteracao.value].status
+      });
 
-  novaTarefa.value = '';
-  alteracao.value = -1;
-}
-   }
+      novaTarefa.value = '';
+      alteracao.value = -1;
+    }
+  }
 }
 
 
 //Status
- function marcarConcluida(id) {
-   const posicao = tarefas.value.findIndex(tarefa => tarefa.id === id);
-   tarefas.value[posicao].status = 'concluida';
- }
- function marcarPendente(id) {
-   const posicao = tarefas.value.findIndex(tarefa => tarefa.id === id);
-   tarefas.value[posicao].status = 'pendente';
- }
+function marcarConcluida(id) {
+  const posicao = tarefas.value.findIndex(tarefa => tarefa.id === id);
+  tarefas.value[posicao].status = 'concluida';
+}
+function marcarPendente(id) {
+  const posicao = tarefas.value.findIndex(tarefa => tarefa.id === id);
+  tarefas.value[posicao].status = 'pendente';
+}
 
 //Editar & excluir
-function editarTarefa(tarefa){
+function editarTarefa(tarefa) {
   alteracao.value = tarefas.value.indexOf(tarefa);
   novaTarefa.value = tarefa.desc;
 }
-//function deleteTarefa(tarefa) {
-//  const posicao = tarefas.value.indexOf(tarefa);
-//  tarefas.value.splice(posicao, 1);
-//}
+function deleteTarefa(item) {
+  const posicao = tarefas.value.indexOf(item);
+  tarefas.value.splice(posicao, 1);
+}
 </script>
 
 <template>
-   <div class="container">
+  <div class="container">
     <h1>Lista de tarefas</h1>
     <div class="add">
       <label for="text">Adicionar nova tarefa:</label>
 
       <input type="text" id="text" placeholder="Descrição da tarefa" v-model="novaTarefa"
-        @keyup.enter="adicionarTarefa"
-        >
+        @keyup.enter="adicionarTarefa">
 
       <button @click="adicionarTarefa">Adicionar</button>
 
@@ -87,12 +86,17 @@ function editarTarefa(tarefa){
             marcarPendente(tarefa.id);
           }
         }" :class="{
-        'concluida': tarefa.status === 'concluida'
-      }">
-          {{ tarefa.desc }}</span> <span class="status"> | {{ tarefa.status }}</span>
+          'concluida': tarefa.status === 'concluida'
+        }">
+          {{ tarefa.desc }}</span>
+          <!--<span
+          :class="{
+            (tarefa.status === 'concluida')? 'concluida': 'status'
+          }"
+          > | {{ tarefa.status }}</span>-->
         <span>
-          <a href="#" @click.prevent="editarTarefa(tarefa)" class="editar"> Editar </a>
-          <!-- <a href="#" @click.prevent="deleteTarefa(tarefa)" class="deletar"> Delete </a> -->
+          <a href="#" @click.prevent="editarTarefa(tarefa)" class="editar"> ✎ Editar </a>
+          <a href="#" @click.prevent="deleteTarefa(tarefa)" class="deletar"> 🗑 Delete </a>
         </span>
       </li>
       <input type="text" placeholder="Filtrar Tarefas" v-model="filtro" class="filtro">
@@ -141,7 +145,7 @@ ul {
   list-style: none;
   padding: 0;
 
-  & li {
+  & li{
     padding: 10px;
     border-bottom: 1px solid #ccc;
     font-size: 18px;
@@ -150,22 +154,44 @@ ul {
     align-tarefas: center;
     cursor: pointer;
 
+    & .concluida{
+      color: #000;
+
+      &  .status{
+
+        color: #2eff51;
+
+    }
+    }
     & .status {
       font-size: 14px;
-      color: #888;
+      color: #000000;
       text-transform: capitalize;
+
     }
+
+
+    & .editar {
+      background: #c76000;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 10px;
+      color: #fff;
+    }
+
+    & .deletar {
+      background: #c70000;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 10px;
+      color: #fff;
+    }
+
   }
+
 }
 
-.concluida {
-  color: #000;
 
-  & .status {
-    color: #2eff51;
-  }
-
-}
 
 .filtro {
   padding: 10px;
@@ -175,4 +201,3 @@ ul {
   text-align: center;
 }
 </style>
-
