@@ -11,22 +11,36 @@ const alteracao = ref(-1);
 const aviso = ref(false);
 //Filtro
 let tarefasFiltradas = computed(() => {
-  if (filtro.value.trim().length > 0) {
-    return tarefas.value.filter(tarefa => tarefa.desc.includes(filtro.value));
+  const termo = filtro.value.toLowerCase().trim();
+
+  if (termo.length > 0) {
+    return tarefas.value.filter(tarefa =>
+      tarefa.desc.toLowerCase().includes(termo) ||
+      tarefa.id.toString().includes(termo)
+    );
   } else {
     return tarefas.value;
   }
 });
 //Tarefas
-let maiorId = Math.max(...tarefas.value.map(tarefa => tarefa.id));
+function gerarId() {
+  return Math.max(0, ...tarefas.value.map(tarefa => tarefa.id)) + 1;
+}
 function adicionarTarefa() {
   if (novaTarefa.value.trim().length < 5) {
     aviso.value = true;
+    setTimeout(() => aviso.value = false, 2000);
   }
   else {
+    aviso.value = false;
     if (alteracao.value == -1) {
 
-      tarefas.value.push({ id: maiorId + 1, desc: novaTarefa.value, status: 'pendente' });
+      tarefas.value.push({
+        id: gerarId(),
+        desc: novaTarefa.value,
+        status: 'pendente'
+      });
+
       novaTarefa.value = '';
     } else {
       tarefas.value.splice(alteracao.value, 1, {
@@ -79,6 +93,9 @@ function deleteTarefa(item) {
 
     <ul>
       <li v-for="tarefa in tarefasFiltradas" :key="tarefa.id">
+        <span class="id">
+          N° Tarefa: <span class="num">{{ tarefa.id }}</span>
+        </span>
         <span @click="{
           if (tarefa.status === 'pendente') {
             marcarConcluida(tarefa.id);
@@ -86,20 +103,23 @@ function deleteTarefa(item) {
             marcarPendente(tarefa.id);
           }
         }" :class="{
-          'concluida': tarefa.status === 'concluida'
+          'concluida-desc': tarefa.status === 'concluida'
         }">
-          {{ tarefa.desc }}</span>
-          <!--<span
-          :class="{
-            (tarefa.status === 'concluida')? 'concluida': 'status'
-          }"
-          > | {{ tarefa.status }}</span>-->
+          {{ tarefa.desc }}
+
+        <span :class="{
+          'concluida-status': tarefa.status === 'concluida',
+          'pendente-status': tarefa.status === 'pendente'
+        }"> | {{ tarefa.status }}</span>
+        </span>
         <span>
+
           <a href="#" @click.prevent="editarTarefa(tarefa)" class="editar"> ✎ Editar </a>
           <a href="#" @click.prevent="deleteTarefa(tarefa)" class="deletar"> 🗑 Delete </a>
+
         </span>
       </li>
-      <input type="text" placeholder="Filtrar Tarefas" v-model="filtro" class="filtro">
+      <input type="text" placeholder="Procurar Tarefas" v-model="filtro" class="filtro">
     </ul>
   </div>
 </template>
@@ -145,31 +165,38 @@ ul {
   list-style: none;
   padding: 0;
 
-  & li{
+  & li {
     padding: 10px;
     border-bottom: 1px solid #ccc;
     font-size: 18px;
     display: flex;
     justify-content: space-between;
-    align-tarefas: center;
+    align-items: center;
     cursor: pointer;
+    color: #fff;
 
-    & .concluida{
-      color: #000;
 
-      &  .status{
-
-        color: #2eff51;
-
+    & .id{
+      color: #454545;
+      margin: 10px;
+      & .num{
+        color: #c76000;
+        font-weight: bold;
+      }
     }
-    }
-    & .status {
-      font-size: 14px;
-      color: #000000;
-      text-transform: capitalize;
-
+    & .pendente-status{
+      color: #c70000;
+      margin: 10px;
     }
 
+    & .concluida-desc {
+      color: green;
+    }
+
+    & .concluida-status {
+      color: orange;
+      margin: 10px;
+    }
 
     & .editar {
       background: #c76000;
@@ -188,16 +215,16 @@ ul {
     }
 
   }
-
-}
-
-
-
-.filtro {
+  & .filtro {
   padding: 10px;
   font-size: 16px;
   border: 1.5px solid #ffc290;
   border-radius: 4px;
   text-align: center;
+  margin: 20px;
 }
+}
+
+
+
 </style>
