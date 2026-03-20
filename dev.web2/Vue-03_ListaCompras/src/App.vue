@@ -9,6 +9,14 @@ let tarefas = ref([
 let novaTarefa = ref('');
 const alteracao = ref(-1);
 const aviso = ref(false);
+const tarefasPendentes = computed(() => {
+  return tarefas.value.filter(t => t.status === 'pendente').length;
+});
+
+const tarefasConcluidas = computed(() => {
+  return tarefas.value.filter(t => t.status === 'concluida').length;
+});
+
 //Filtro
 let tarefasFiltradas = computed(() => {
   const termo = filtro.value.toLowerCase().trim();
@@ -66,6 +74,8 @@ function marcarPendente(id) {
   tarefas.value[posicao].status = 'pendente';
 }
 
+
+
 //Editar & excluir
 function editarTarefa(tarefa) {
   alteracao.value = tarefas.value.indexOf(tarefa);
@@ -90,7 +100,17 @@ function deleteTarefa(item) {
 
       <div v-show="aviso" class="aviso">Digite ao menos 5 caracteres!</div>
     </div>
-
+    <div class="tarefas">
+      <p class="total">
+        Total de tarefas: {{ tarefas.length }}
+      </p>
+      <p class="pendente">
+        Tarefas pendentes: {{ tarefasPendentes }}
+      </p>
+      <p class="concluida">
+        Tarefas concluídas: {{ tarefasConcluidas }}
+      </p>
+      </div>
     <ul>
       <li v-for="tarefa in tarefasFiltradas" :key="tarefa.id">
         <span class="id">
@@ -120,11 +140,19 @@ function deleteTarefa(item) {
         </span>
       </li>
       <input type="text" placeholder="Procurar Tarefas" v-model="filtro" class="filtro">
+
     </ul>
+
   </div>
 </template>
 
 <style scoped>
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 h1 {
   color: #c76000;
   font-size: 50px;
@@ -161,9 +189,33 @@ h1 {
   }
 }
 
+ .tarefas{
+  display: flex;
+  align-items: flex-start;
+
+
+  & .total {
+    font-size: 18px;
+    color: #c76000;
+    margin: 10px;
+  }
+
+  & .pendente {
+    font-size: 18px;
+    color: #c70000;
+    margin: 10px;
+  }
+
+  & .concluida {
+    font-size: 18px;
+    color: green;
+    margin: 10px;
+}
+}
 ul {
   list-style: none;
   padding: 0;
+
 
   & li {
     padding: 10px;
@@ -223,8 +275,8 @@ ul {
   text-align: center;
   margin: 20px;
 }
-}
 
+}
 
 
 </style>
