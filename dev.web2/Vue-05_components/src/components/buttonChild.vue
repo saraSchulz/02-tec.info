@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['nome', 'tipo', 'estilo'])
+defineProps(['desc', 'status', 'estilo'])
 
 defineEmits(['click'])
 </script>
