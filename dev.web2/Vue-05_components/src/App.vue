@@ -7,6 +7,7 @@ let tarefas = ref([
   { id: 2, desc: 'Fazer tudo-list', status: 'pendente' },
   { id: 3, desc: 'Deploy contador Vue', status: 'concluida' }
 ]);
+
 let novaTarefa = ref('');
 const alteracao = ref(-1);
 const aviso = ref(false);
@@ -82,10 +83,20 @@ function editarTarefa(tarefa) {
   alteracao.value = tarefas.value.indexOf(tarefa);
   novaTarefa.value = tarefa.desc;
 }
+
 function deleteTarefa(item) {
   const posicao = tarefas.value.indexOf(item);
+  if (alteracao.value === posicao) {
+    alert('Você está editando essa tarefa');
+    return;
+  }
   tarefas.value.splice(posicao, 1);
 }
+
+function limparLista() {
+  tarefas.value = [];
+}
+
 </script>
 
 <template>
@@ -97,7 +108,7 @@ function deleteTarefa(item) {
       <input type="text" id="text" placeholder="Descrição da tarefa" v-model="novaTarefa"
         @keyup.enter="adicionarTarefa">
 
-      <button @click="adicionarTarefa">Adicionar</button>
+      <button class="adicionar" @click="adicionarTarefa">Adicionar</button>
 
       <div v-show="aviso" class="aviso">Digite ao menos 5 caracteres!</div>
     </div>
@@ -122,6 +133,7 @@ function deleteTarefa(item) {
           }
         }" />
       <input type="text" placeholder="Procurar Tarefas" v-model="filtro" class="filtro">
+      <button @click="limparLista" class="limpar">Limpar Lista</button>
 
     </ul>
   </div>
@@ -154,13 +166,10 @@ function deleteTarefa(item) {
       border: 1px solid #ccc;
       text-align: center;
     }
-    & button{
+    & .adicionar{
       padding: 10px 20px;
       background-color: #8c00ff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+
     }
     & .aviso{
       color: red;
@@ -197,7 +206,14 @@ function deleteTarefa(item) {
       border: 1px solid #ccc;
       text-align: center;
     }
-  }
+    & .filtro{
+      margin-top: 20px;
+    }
+    & .limpar{
+      padding: 10px 20px;
+      background-color: #ff0040;
 
+  }
+}
 }
 </style>

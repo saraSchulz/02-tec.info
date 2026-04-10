@@ -9,8 +9,6 @@ let acoes = ref([
   { id: 5, nome: 'Excluir', tipo: 'excluir' },
 ]);
 
-
-
 function clickButton(mensagem) {
   alert(`Você clicou no botão ${mensagem}!`);
 }

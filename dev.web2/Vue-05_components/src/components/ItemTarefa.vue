@@ -44,23 +44,13 @@ li{
     }
     & .editar{
       background-color: #e228d2;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 10px;
+
     }
     & .deletar{
       background-color: #ff0040;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 10px;
+
     }
-    
+
 
 }
 </style>
