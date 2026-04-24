@@ -1,20 +1,27 @@
 <script setup>
-import { ref } from 'vue'
+
 import ItemTarefa from './components/ItemTarefa.vue'
 import { listatarefas } from './data/produtos.js';
-import { adicionarTarefa, editarTarefa, deleteTarefa, marcarConcluida, marcarPendente, limparLista } from './functions/funcao.js';
+import {
+  adicionarTarefa,
+  editarTarefa,
+  deleteTarefa,
+  marcarConcluida,
+  marcarPendente,
+  limparLista,
+  filtro,
+  novaTarefa, aviso,
+} from './functions/funcao.js';
 
-const filtro = ref('');
-const adicionar = ref(adicionarTarefa);
-const editar = ref(editarTarefa);
-const deletar = ref(deleteTarefa);
-const Concluida = ref(marcarConcluida);
-const Pendente = ref(marcarPendente);
-const limpar = ref(limparLista);
-const tarefas = ref(listatarefas);
 
-let novaTarefa = ref('');
-const aviso = ref(false);
+const adicionar = adicionarTarefa;
+const editar = editarTarefa;
+const deletar = deleteTarefa;
+const Concluida = marcarConcluida;
+const Pendente = marcarPendente;
+const limpar = limparLista;
+const tarefas = listatarefas;
+
 </script>
 
 <template>

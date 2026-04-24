@@ -1,8 +1,11 @@
 import { tarefas } from '../data/produtos.js';
-import { aviso, novaTarefa , filtro } from '../App.vue';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 
-const alteracao = (-1);
+const alteracao = ref(-1);
+const filtro = ref('');
+let novaTarefa = ref('');
+const aviso = ref(false);
+
 //Filtro
 let tarefasFiltradas = computed(() => {
   const termo = filtro.value.toLowerCase().trim();
@@ -83,3 +86,16 @@ function deleteTarefa(item) {
 function limparLista() {
   tarefas.value = [];
 }
+export {
+  filtro,
+  aviso,
+  tarefasFiltradas,
+  tarefasPendentes,
+  tarefasConcluidas,
+  adicionarTarefa,
+  editarTarefa,
+  deleteTarefa,
+  marcarConcluida,
+  marcarPendente,
+  limparLista
+};
