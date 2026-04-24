@@ -1,6 +1,6 @@
 <script setup>
 defineProps(['tarefa'])
-const emit = defineEmits(['editar', 'deletar', 'toggle'])
+const emit = defineEmits(['editar', 'deletar', 'toggle']);
 </script>
 
 <template>
