@@ -1,0 +1,69 @@
+const books = [
+    {
+        id: 1,
+        image: '/booksImgs/domCasmurro.png',
+        title: 'Dom Casmurro',
+        autor: 'Machado de Assis',
+        preco: 24.90,
+        desc: 'Bentinho relembra sua juventude e o amor por Capitu em uma narrativa marcada por dúvidas e ciúmes. Ao revisitar o passado, ele tenta compreender os acontecimentos que transformaram sua vida. A obra questiona a confiabilidade do narrador. Considerado um dos maiores romances brasileiros. Um clássico da literatura realista.'
+
+    },
+    {
+        id: 2,
+        image: '/booksImgs/vidasSecas.png',
+        title: 'Vidas Secas',
+        autor: 'Graciliano Ramos',
+        preco: 19.90,
+        desc: 'Acompanhamos a trajetória de uma família sertaneja em busca de sobrevivência. A seca e a pobreza moldam o destino dos personagens. Fabiano, Sinhá Vitória e seus filhos enfrentam inúmeras dificuldades. A narrativa retrata a dura realidade do sertão nordestino. Uma obra marcante do modernismo brasileiro.'
+
+    },
+    {
+        id: 3,
+        image: '/booksImgs/macunaima.png',
+        title: 'Macunaíma',
+        autor: 'Mário de Andrade',
+        preco: 22.80,
+        desc: 'Macunaíma é um herói sem nenhum caráter que vive aventuras fantásticas pelo Brasil. A obra mistura lendas, folclore e elementos da cultura popular. Com humor e crítica social, o autor explora a identidade nacional. A narrativa apresenta uma linguagem inovadora e criativa. Um dos principais livros do modernismo brasileiro.'
+    },
+    {
+        id: 4,
+        image: '/booksImgs/tristeQuaresma.png',
+        title: 'Triste Fim de Policarpo Quaresma',
+        autor: 'Lima Barreto',
+        preco: 23.10,
+        desc: 'Policarpo Quaresma é um patriota que acredita profundamente no potencial do Brasil. Suas ideias idealistas entram em conflito com a realidade da sociedade. A obra critica o nacionalismo exagerado e as injustiças políticas. Com ironia, Lima Barreto retrata os problemas do país. Um clássico da literatura pré-modernista.'
+    },
+    {
+        id: 5,
+        image: '/booksImgs/memoriasCubas.png',
+        title: 'Memórias Póstumas de Brás Cubas',
+        autor: 'Machado de Assis',
+        preco: 21.50,
+        desc: 'Narrado por um defunto autor, o romance apresenta as memórias de Brás Cubas. Com humor e sarcasmo, ele revisita sua vida e seus fracassos. A obra rompe padrões tradicionais da narrativa. Machado de Assis critica a sociedade brasileira do século XIX. Um marco do realismo nacional.'
+    },
+    {
+        id: 6,
+        image: '/booksImgs/capitaesAreia.png',
+        title: 'Capitães da Areia',
+        autor: 'Jorge Amado',
+        preco: 18.75,
+        desc: 'O livro acompanha um grupo de meninos de rua que vive em Salvador. Liderados por Pedro Bala, eles enfrentam abandono e preconceito. A narrativa aborda questões sociais e desigualdades. Jorge Amado retrata a infância marginalizada com sensibilidade. Uma obra emocionante e reflexiva.'
+    },
+    {
+        id: 7,
+        image: '/booksImgs/iracema.png',
+        title: 'Iracema',
+        autor: 'José de Alencar',
+        preco: 17.40,
+        desc: 'Iracema conta a história de amor entre uma indígena e um colonizador português.A narrativa simboliza a formação do povo brasileiro. José de Alencar valoriza a natureza e a cultura indígena. O romance apresenta forte linguagem poética. Uma das obras mais importantes do romantismo brasileiro.'
+    },
+    {
+        id: 8,
+        image: '/booksImgs/moreninha.png',
+        title: 'A Moreninha',
+        autor: 'Joaquim Manuel de Macedo',
+        preco: 16.95,
+        desc: 'Augusto aposta que será capaz de manter um único amor por toda a vida. Durante uma visita a uma ilha, ele conhece a jovem Carolina. A história desenvolve um romance leve e envolvente. A obra é considerada um marco do romantismo no Brasil. Um clássico repleto de emoções e descobertas.'
+    }
+];
+ export { books }
