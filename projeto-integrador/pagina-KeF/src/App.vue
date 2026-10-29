@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 
-const menuOpen = ref(false);
 </script>
 
 <template>
@@ -95,6 +93,7 @@ const menuOpen = ref(false);
     <p>
       &copy; 2026 Karen & Felipe. All rights reserved.
     </p>
+    <p>Desenvolvido por: Sara Schulz</p>
   </footer>
 </template>
 
