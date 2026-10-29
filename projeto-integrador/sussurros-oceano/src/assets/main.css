@@ -1,0 +1,23 @@
+@import './base.css';
+body {
+  font-family: "Marcellus SC", serif;
+  background-color: #E4F9FD;
+}
+button {
+  cursor: pointer;
+  font-family: "Marcellus SC", serif;
+}
+.logo{
+  height: 80px;
+}
+h1, h2, h3, h4, h5, h6, p, a, li, div{
+  color: #ffffff;
+}
+ul, ol{
+  list-style: none;
+  padding: 0;
+}
+a{
+  color: #ffffff;
+  text-decoration: none;
+}
