@@ -1,0 +1,27 @@
+@import './base.css';
+body {
+    font-family: 'Smooch Sans', sans-serif;
+    background-color: #191919;
+    & a,
+    li,
+    p {
+        text-decoration: none;
+        color: #fff;
+        list-style: none;
+    }
+    & h1{
+      font-family: 'Offside', sans-serif;
+    }
+    & .logo{
+        display: block;
+        margin: 5px auto 40px;
+        height: 100px;
+        width: 105px;
+        cursor: pointer;
+        transition: all 1s ease;
+        border-radius: 80px;
+    }
+    & .logo:hover{
+        box-shadow: -10px 2px 20px #f81f40ab;
+    }
+}
