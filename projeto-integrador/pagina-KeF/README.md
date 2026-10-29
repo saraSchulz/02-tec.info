@@ -1,44 +1,62 @@
-# pagina-KeF
+# Pagina-KeF
 
-This template should help get you started developing with Vue 3 in Vite.
+## Sobre o projeto
 
-## Recommended IDE Setup
+O **Pagina-KeF** é um projeto de desenvolvimento web que explora a criação de uma página com identidade visual própria, combinando estrutura, estilização e recursos gráficos para construir uma experiência visual coerente.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+A aplicação foi desenvolvida com Vue.js e Vite, utilizando arquivos de estilo e imagens para compor a apresentação visual da página.
 
-## Recommended Browser Setup
+## Características
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- **Interface personalizada:** organização visual própria para a apresentação do conteúdo.
+- **Recursos gráficos:** utilização de imagens, ilustrações e elementos visuais.
+- **Estilização:** aplicação de CSS para definir a aparência e a organização dos elementos.
+- **Desenvolvimento modular:** estrutura baseada em Vue.js.
+- **Organização de recursos:** separação entre arquivos da aplicação, estilos e imagens públicas.
 
-## Customize configuration
+## Tecnologias utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Vue.js
+- JavaScript
+- Vite
+- HTML5
+- CSS3
 
-## Project Setup
+## Estrutura do projeto
 
-```sh
-npm install
+```text
+pagina-KeF/
+├── public/          # Imagens e recursos gráficos
+├── src/
+│   ├── assets/      # Estilos e recursos da aplicação
+│   ├── App.vue      # Componente principal
+│   └── main.js      # Inicialização da aplicação
+├── index.html
+├── package.json
+└── vite.config.js
 ```
 
-### Compile and Hot-Reload for Development
+## Como executar
 
-```sh
-npm run dev
-```
+É necessário ter o Node.js e o npm instalados.
 
-### Compile and Minify for Production
+1. Acesse a pasta `pagina-KeF`.
+2. Instale as dependências:
 
-```sh
-npm run build
-```
+   ```bash
+   npm install
+   ```
 
-### Lint with [ESLint](https://eslint.org/)
+3. Execute o servidor de desenvolvimento:
 
-```sh
-npm run lint
-```
+   ```bash
+   npm run dev
+   ```
+
+4. Acesse o endereço local indicado no terminal.
+
+## Objetivo acadêmico
+
+O projeto permite aplicar conhecimentos de desenvolvimento front-end, construção de interfaces, estilização com CSS e organização de recursos visuais em uma aplicação web.
+
+Sua documentação registra a estrutura e as tecnologias utilizadas, contribuindo para a organização do portfólio de projetos desenvolvidos durante minha formação acadêmica.

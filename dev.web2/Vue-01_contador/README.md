@@ -1,44 +1,30 @@
-# Vue-02
+# Vue-01 — Contador
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicação simples de contador desenvolvida com Vue.js 3 e Vite para praticar reatividade e interação com o usuário.
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Exibe o valor atual do contador.
+- Permite definir o valor usado para incrementar ou decrementar.
+- Impede que o contador ultrapasse o máximo de 10 ou fique abaixo de 0.
+- Desativa os botões quando o contador atinge um dos limites.
+- Exibe mensagens quando o valor mínimo ou máximo é alcançado.
 
-## Recommended Browser Setup
+## Conceitos praticados
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- `ref()` para manter dados reativos.
+- `v-model` para vincular o campo numérico ao estado.
+- Eventos de clique com `@click`.
+- Renderização condicional com `v-if`.
+- Propriedade `:disabled` e estilização com CSS.
 
-## Customize configuration
+## Tecnologias
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Vue.js 3, JavaScript, HTML, CSS e Vite.
 
-## Project Setup
+## Como executar
 
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

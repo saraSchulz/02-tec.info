@@ -1,44 +1,29 @@
-# .
+# Vue-04 — Propriedades Computadas
 
-This template should help get you started developing with Vue 3 in Vite.
+Projeto didático voltado ao estudo de propriedades computadas no Vue.js e à comparação entre valores derivados com `computed()` e funções executadas no template.
 
-## Recommended IDE Setup
+## O que demonstra
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Campos reativos para nome e sobrenome.
+- Composição e exibição do nome completo.
+- Comparação entre uma propriedade computada e uma função que retorna o mesmo resultado.
+- Vinculação de campos de texto com `v-model`.
+- Renderização de uma lista de nomes com `v-for`.
 
-## Recommended Browser Setup
+## Conceitos praticados
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- `ref()` para declarar estado reativo.
+- `computed()` para calcular um valor derivado e reutilizá-lo enquanto suas dependências não mudam.
+- Funções JavaScript usadas em templates.
+- Vinculação de dados e renderização de listas.
 
-## Customize configuration
+## Tecnologias
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Vue.js 3, JavaScript, HTML, CSS e Vite.
 
-## Project Setup
+## Como executar
 
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

@@ -1,44 +1,32 @@
-# livrariaClassica
+# Vue-07 — Livraria Clássica
 
-This template should help get you started developing with Vue 3 in Vite.
+Interface de uma livraria virtual desenvolvida com Vue.js. O projeto organiza um catálogo de livros e páginas relacionadas, utilizando componentes separados para estruturar a experiência de navegação.
 
-## Recommended IDE Setup
+## Estrutura e funcionalidades identificadas
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Página inicial da livraria.
+- Catálogo de livros com informações como título, autor, preço, imagem e descrição.
+- Página de detalhes acessível por identificador do livro.
+- Página de apresentação da equipe.
+- Componentes de cabeçalho e rodapé.
+- Componentes para cartões, listagem de produtos e elementos relacionados ao carrinho.
 
-## Recommended Browser Setup
+## Conceitos praticados
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Componentização de interfaces.
+- Navegação com Vue Router e rotas dinâmicas.
+- Organização dos dados do catálogo em um módulo separado.
+- Composição de páginas a partir de componentes reutilizáveis.
 
-## Customize configuration
+## Tecnologias
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Vue.js 3, JavaScript, Vue Router, HTML, CSS, Material Design Icons e Vite.
 
-## Project Setup
+## Como executar
 
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+**Observação:** este README descreve a estrutura encontrada no código; a presença de componentes de carrinho não significa, por si só, que todas as etapas de compra estejam integradas a um sistema de pagamento.

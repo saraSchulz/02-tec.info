@@ -1,44 +1,31 @@
-# Vue-02
+# Vue-03 — Lista de Atividades
 
-This template should help get you started developing with Vue 3 in Vite.
+Projeto de gerenciamento de itens que amplia os exercícios de listas com identificadores, estados e indicadores calculados.
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Adicionar, editar e excluir itens.
+- Identificar cada item por um número.
+- Marcar itens como pendentes ou concluídos.
+- Pesquisar por descrição ou identificador.
+- Exibir o total de itens e as quantidades pendentes e concluídas.
+- Validar descrições com pelo menos cinco caracteres.
 
-## Recommended Browser Setup
+## Conceitos praticados
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- `ref()` e `computed()`.
+- Filtragem de arrays.
+- Geração de identificadores.
+- Atualização de propriedades de objetos reativos.
+- Diretivas `v-for`, `v-model` e eventos.
 
-## Customize configuration
+## Tecnologias
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Vue.js 3, JavaScript, HTML, CSS e Vite.
 
-## Project Setup
+## Como executar
 
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

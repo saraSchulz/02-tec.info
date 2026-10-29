@@ -1,44 +1,31 @@
-# Vue-05_components
+# Vue-05 — Componentes
 
-This template should help get you started developing with Vue 3 in Vite.
+Evolução do projeto de lista de tarefas, com a interface de cada tarefa extraída para um componente reutilizável. O objetivo é praticar a organização de aplicações Vue em partes menores e a comunicação entre componentes.
 
-## Recommended IDE Setup
+## Funcionalidades
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Adicionar, editar e excluir tarefas.
+- Marcar tarefas como pendentes ou concluídas.
+- Pesquisar tarefas por descrição ou número.
+- Exibir totais gerais e contagens por status.
+- Limpar a lista.
+- Validar descrições com pelo menos cinco caracteres.
 
-## Recommended Browser Setup
+## Organização e conceitos
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Componente `ItemTarefa` para representar cada tarefa.
+- Propriedades (*props*) para transmitir dados ao componente.
+- Eventos personalizados para comunicar ações como editar, excluir e alternar o status.
+- `ref()` e `computed()` para estado reativo e valores derivados.
+- Filtragem e manipulação de arrays.
 
-## Customize configuration
+## Tecnologias
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Vue.js 3, JavaScript, HTML, CSS e Vite.
 
-## Project Setup
+## Como executar
 
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```

@@ -1,44 +1,31 @@
-# .
+# Vue-06 — Lista Catálogo
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicação de catálogo de produtos com navegação por categorias. Os dados de exemplo representam produtos para animais de estimação, como alimentos, brinquedos, itens de higiene e acessórios.
 
-## Recommended IDE Setup
+## Estrutura e funcionalidades
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Página inicial e páginas de categorias.
+- Navegação entre páginas com Vue Router.
+- Componentes para cabeçalho, cartões, diálogos e interação com produtos.
+- Dados de produtos organizados separadamente da interface.
+- Utilitários para apoiar o tratamento e a apresentação dos dados.
 
-## Recommended Browser Setup
+## Conceitos praticados
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Componentização e reutilização de interface.
+- Rotas com Vue Router.
+- Separação entre dados, visualização e funções auxiliares.
+- Organização de uma aplicação em páginas e componentes.
 
-## Customize configuration
+## Tecnologias
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Vue.js 3, JavaScript, Vue Router, HTML, CSS e Vite.
 
-## Project Setup
+## Como executar
 
-```sh
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+**Observação:** a disponibilidade de imagens depende dos arquivos de recursos presentes no projeto.
