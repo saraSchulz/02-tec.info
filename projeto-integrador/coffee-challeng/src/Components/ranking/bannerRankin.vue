@@ -47,4 +47,54 @@
     color: #6B4A2F;
   }
 }
+/* ====================================
+   TABLETS
+===================================== */
+@media (max-width: 768px) {
+  .titulo {
+    padding: 20px;
+
+    & h2 {
+      font-size: 20px;
+      margin: 10px;
+    }
+
+    & h1 {
+      margin: 10px 0;
+
+      & img {
+        width: 80px;
+      }
+    }
+
+    & p {
+      font-size: 16px;
+    }
+  }
+}
+/* ====================================
+   CELULARES
+===================================== */
+@media (max-width: 430px) {
+  .titulo {
+    padding: 10px;
+
+    & h2 {
+      font-size: 16px;
+      margin: 5px;
+    }
+
+    & h1 {
+      margin: 5px 0;
+
+      & img {
+        width: 60px;
+      }
+    }
+
+    & p {
+      font-size: 14px;
+    }
+  }
+}
 </style>

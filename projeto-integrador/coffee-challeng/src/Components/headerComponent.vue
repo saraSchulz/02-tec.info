@@ -89,4 +89,49 @@ header {
     }
   }
 }
+/* ====================================
+              TABLETS
+===================================== */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 30px 0;
+
+    & h1 {
+      margin: 10px 0;
+    }
+    & ul {
+
+      align-items: center;
+
+      & li {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+/* ====================================
+            CELULARES
+===================================== */
+@media (max-width: 430px) {
+   header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 30px 0;
+
+    & h1 {
+      margin: 10px 0;
+    }
+    & ul {
+      flex-direction: column;
+      align-items: center;
+
+      & li {
+        margin: 5px 0;
+      }
+    }
+  }
+}
 </style>

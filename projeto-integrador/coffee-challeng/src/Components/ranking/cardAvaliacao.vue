@@ -29,24 +29,24 @@ const media = computed(() => calcularMedia(props.coffee))
     <div class="notas">
 
       <p class="nota">
-        Aroma
+        Aroma:
         <span>{{ coffee.aroma }}/10</span>
       </p>
 
       <p class="nota">
-        Sabor
+        Sabor:
         <span>{{ coffee.sabor }}/10</span>
       </p>
       <p class="nota">
-        Acidez
+        Acidez:
         <span>{{ coffee.acidez }}/10</span>
       </p>
       <p class="nota">
-        Corpo
+        Corpo:
         <span>{{ coffee.corpo }}/10</span>
       </p>
       <p class="nota">
-        Finalização
+        Finalização:
         <span>{{ coffee.finalizacao }}/10</span>
       </p>
 
@@ -77,6 +77,8 @@ const media = computed(() => calcularMedia(props.coffee))
   border-radius: 20px;
   padding: 25px;
   box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
 
   & .cabecalho {
     display: flex;
@@ -181,6 +183,58 @@ const media = computed(() => calcularMedia(props.coffee))
       & strong {
         color: #eee7e0;
       }
+    }
+  }
+}
+/* ====================================
+   TABLETS
+===================================== */
+@media (max-width: 768px) {
+  .cardAvaliacao {
+    width: 100%;
+    padding: 15px;
+
+    & .cabecalho {
+      flex-direction: column;
+      align-items: flex-start;
+
+      & .media {
+        margin-top: 10px;
+      }
+    }
+
+    & .notas {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+/* ====================================
+          CELULARES
+===================================== */
+@media (max-width: 430px) {
+  .cardAvaliacao {
+    width: 80%;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    & .cabecalho {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+
+      & .media {
+        margin-top: 10px;
+      }
+    }
+
+    & .notas {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      gap: 0;
     }
   }
 }

@@ -261,4 +261,45 @@ function limparFormulario() {
   background: linear-gradient(180deg, #3b2618, #DCC8B0);
   padding: 25px;
 }
+/* ====================================
+   CELULARES
+===================================== */
+@media (max-width: 430px) {
+  .adicionar-avaliacao {
+    padding: 30px 10px;
+
+    & .formulario-container {
+      padding: 25px;
+
+      & .titulo {
+        & h1 {
+          font-size: 24px;
+        }
+
+        & p {
+          font-size: 13px;
+        }
+      }
+
+      & form {
+        gap: 15px;
+
+        & .avaliacao-notas {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+          padding: 15px;
+        }
+
+        & button {
+          height: 45px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .space {
+    padding: 50px;
+  
+  }
+}
 </style>

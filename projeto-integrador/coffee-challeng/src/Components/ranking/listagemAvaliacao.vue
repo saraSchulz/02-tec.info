@@ -33,4 +33,26 @@ const coffeesOrdenados = computed(() => {
   justify-content: center;
   align-items: center;
 }
+/* ====================================
+   TABLETS
+===================================== */
+@media (max-width: 768px) {
+  .avaliacao-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* ====================================
+   CELULARES
+===================================== */
+@media (max-width: 430px) {
+  .avaliacao-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+} 
 </style>

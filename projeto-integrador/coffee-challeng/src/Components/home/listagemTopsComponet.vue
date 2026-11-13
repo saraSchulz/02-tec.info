@@ -31,8 +31,6 @@ const ultimasAvaliacoes = computed(() => {
     .slice(0, 3)
 })
 </script>
-
-
 <template>
   <div class="tops">
     <div class="top">
@@ -199,6 +197,42 @@ const ultimasAvaliacoes = computed(() => {
         transform: translateY(-2px);
         box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
       }
+    }
+  }
+}
+/* ====================================
+   TABLETS
+===================================== */
+@media (max-width: 768px) {
+  .tops {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin: 50px 0;
+
+    & .top {
+      width: 50%;
+      min-height: 350px;
+    }
+  }
+}
+/* ====================================
+   CELULARES
+===================================== */
+@media (max-width: 430px) {
+  .tops {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin: 50px 0;
+
+    & .top {
+      width: 80%;
+      min-height: 350px;
     }
   }
 }

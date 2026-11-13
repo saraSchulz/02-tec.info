@@ -78,5 +78,113 @@
     }
   }
 }
+/* ====================================
+            TABLETS
+===================================== */
+@media (max-width: 768px) {
+  .bannerhome{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    & .left{
+      width: 100%;
+      margin: 10px 50px;
+      & p{
+        font-size: 30px;
+        margin: 10px 10px;
+      }
+      & h2{
+        font-size: 40px;
+        margin: 10px 10px;
+      }
+      & .btns{
+        display: flex;
+        margin: 10px 10px;
+        & button{
+          margin: 10px;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: #6f4e37;
+          color: white;
+          border: none;
+          cursor: pointer;
+          & a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            & i{
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    & .right{
+      width: 100%;
+      margin: 10px;
+      align-items: center;
+      & h1{
+        & img{
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+/* ====================================
+          CELLULAR
+===================================== */
+@media (max-width: 430px) {
+  .bannerhome{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    & .left{
+      width: 50%;
+      margin: 10px 20px;
+      & p{
+        font-size: 20px;
+        margin: 10px 10px;
+      }
+      & h2{
+        font-size: 30px;
+        margin: 10px 10px;
+      }
+      & .btns{
+        display: flex;
+        margin: 10px 10px;
+        & button{
+          margin: 10px;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: #6f4e37;
+          color: white;
+          border: none;
+          cursor: pointer;
+          & a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            & i{
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    & .right{
+      width: 100%;
+      margin: 10px;
+      align-items: center;
 
+      & h1{
+        & img{
+          width: 80%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
 </style>

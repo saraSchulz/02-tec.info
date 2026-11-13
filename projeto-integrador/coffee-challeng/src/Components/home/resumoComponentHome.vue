@@ -116,4 +116,61 @@ const ultimaAvaliacao = computed(() => {
   }
 }
 }
+/* ====================================
+   TABLETS
+===================================== */
+@media (max-width: 768px) {
+  .component{
+
+    margin: 20px 0;
+
+    & .resumo{
+
+      gap: 50px;
+      flex-wrap: wrap;
+
+      & .card{
+        width: 30%;
+        & i{
+          font-size: 30px;
+        }
+        & h2{
+          font-size: 20px;
+        }
+        & p.info{
+          font-size: 20px;
+        }
+        p.text{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+/* ====================================
+   CELULARES
+===================================== */
+@media (max-width: 430px) {
+  .component{
+    & .resumo{
+      flex-direction: column;
+      gap: 20px;
+      & .card{
+        width: 80%;
+        & i{
+          font-size: 30px;
+        }
+        & h2{
+          font-size: 20px;
+        }
+        & p.info{
+          font-size: 20px;
+        }
+        p.text{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
 </style>
