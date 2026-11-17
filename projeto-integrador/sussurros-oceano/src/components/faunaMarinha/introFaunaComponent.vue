@@ -41,4 +41,16 @@
     }
   }
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  .intro {
+    padding: 20px;
+    & h2{
+      font-size: 25px;
+    }
+    & p{
+      font-size: 18px;
+      margin: 2vw 4vw;
+    }
+  }
+}
 </style>

@@ -199,4 +199,20 @@ div.linha {
     font-size: 1.2rem;
   }
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  header {
+    padding: 10px 30px;
+  }
+
+  .menu-icon {
+    margin: 0 10px;
+  }
+
+  .menu-list a {
+    font-size: 1.2rem;
+  }
+  .overlay {
+    width: 70%;
+  }
+}
 </style>

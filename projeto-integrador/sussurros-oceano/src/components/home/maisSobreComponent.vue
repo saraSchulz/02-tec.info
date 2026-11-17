@@ -64,4 +64,30 @@
     }
   }
 }
+/* ====================================
+              CELULARES
+===================================== */
+@media (max-width: 767px) and (min-width: 360px) {
+  .maisSobre {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    & .texto {
+      width: 100%;
+      margin: 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    & .img {
+      margin: 30px 0;
+      & img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
 </style>

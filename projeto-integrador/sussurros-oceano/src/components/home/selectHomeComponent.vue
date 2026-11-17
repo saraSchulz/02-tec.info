@@ -70,5 +70,22 @@
     }
 
 }
-
+/* ====================================
+              CELULARES
+===================================== */
+@media (max-width: 767px) and (min-width: 360px) {
+    section.select {
+        padding: 20px 10px;
+        & ul {
+          text-align: center;
+            gap: 1rem;
+            & li {
+                font-size: 1.2rem;
+            }
+            & img {
+                height: 30px;
+            }
+        }
+    }
+}
 </style>

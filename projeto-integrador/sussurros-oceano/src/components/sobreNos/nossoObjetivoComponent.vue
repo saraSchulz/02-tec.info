@@ -97,4 +97,31 @@
     }
   }
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  .nossoObjetivo {
+    & .titulo {
+      font-size: 20px;
+    }
+    & .texto {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      min-height: auto;
+      & .text {
+        width: 90%;
+        font-size: 1.5rem;
+      }
+      & .img {
+        width: 90%;
+        margin: 20px 0;
+        & img{
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
 </style>

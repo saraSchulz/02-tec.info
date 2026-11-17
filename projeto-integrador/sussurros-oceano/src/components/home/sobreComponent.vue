@@ -238,5 +238,51 @@ onBeforeUnmount(() => {
     right: -100px;
   }
 }
+/* ====================================
+              CELULARES
+===================================== */
+@media (max-width: 767px) and (min-width: 360px) {
+  .sobre {
+    display: flex;
+      flex-direction: column;
+      
+    & h2 {
+      font-size: 25px;
+      top: 20px;
+      
+    }
+    & .maior {
+      flex-direction: column;
+      gap: 20px;
+      margin: 60px auto 0;
+      & .text {
+        width: 90%;
+        margin: 60px auto 0;
+
+        & p {
+          font-size: 16px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .carrossel {
+    width: 90%;
+  }
+
+  .slide {
+    width: 200px;
+    height: 120px;
+  }
+
+  .prev {
+    left: -80px;
+  }
+
+  .next {
+    right: -80px;
+  }
+}
 </style>
 

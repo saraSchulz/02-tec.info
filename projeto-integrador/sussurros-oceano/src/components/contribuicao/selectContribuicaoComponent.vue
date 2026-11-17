@@ -47,4 +47,19 @@
     }
   }
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  section.select {
+    padding: 20px 10px;
+
+    & ul {
+      text-align: center;
+      gap: 1rem;
+      padding: 0.5rem;
+
+      & li {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
 </style>

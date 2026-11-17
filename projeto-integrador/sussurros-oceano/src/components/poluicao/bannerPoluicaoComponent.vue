@@ -47,4 +47,13 @@ h2{
     }
   }
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  .banner {
+    min-height: 100%;
+
+    & h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
 </style>

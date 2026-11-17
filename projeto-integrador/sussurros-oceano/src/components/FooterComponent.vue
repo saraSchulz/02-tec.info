@@ -111,5 +111,48 @@ footer {
     }
   }
 }
+/* ====================================
+              CELULARES
+===================================== */
+@media (max-width: 767px) and (min-width: 360px) {
+  footer {
+    padding: 20px;
 
+    & .maior {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      & ul {
+        margin: 10px 0;
+        & li {
+          font-size: 12px;
+        }
+      }
+
+      & .central {
+        margin: 20px 0;
+        & .logoFooter {
+          a{
+            margin: 0 0 10px;
+          }
+          & .logo {
+            height: 40px;
+          }
+          & p {
+            font-size: 15px;
+          }
+        }
+
+        & .direitos {
+          margin: 10px 0 0;
+
+          & p {
+            font-size: 8px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

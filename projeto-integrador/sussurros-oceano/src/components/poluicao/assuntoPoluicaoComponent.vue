@@ -200,4 +200,36 @@ function selecionarTopico(topico) {
   max-height: 300px;
   transform: translateY(0);
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  .assuntoFauna {
+    & .titulo {
+      padding: 20px 0;
+      text-align: center;
+
+      & h2 {
+        font-size: 3rem;
+      }
+    }
+    & .informacoes {
+      min-height: auto;
+
+      & .lista {
+        margin: 10px;
+
+        & ul {
+          margin: 0 1rem;
+
+          & li {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+          }
+        }
+      }
+
+      .conteudo {
+        font-size: 1rem;
+      }
+    }
+  }
+  }
 </style>

@@ -254,4 +254,47 @@ function voltar() {
     }
   }
 }
+@media (max-width: 767px) and (min-width: 360px) {
+  .assuntoFauna {
+    & .titulo {
+      padding: 10px 0;
+
+      & h2 {
+        font-size: 2rem;
+      }
+    }
+    & .informacoes {
+      min-height: auto;
+      flex-direction: column;
+      gap: 2vw;
+      padding: 10px;
+
+      & .lista {
+        & ul {
+          & li {
+            font-size: 1.2rem;
+            padding: 5px 30px;
+          }
+        }
+      }
+
+      & .detalhes {
+        flex: 0 0 90%;
+        max-width: 90%;
+
+        & h3 {
+          font-size: 1.5rem;
+        }
+
+        & p {
+          font-size: 1rem;
+        }
+
+        & video {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
 </style>

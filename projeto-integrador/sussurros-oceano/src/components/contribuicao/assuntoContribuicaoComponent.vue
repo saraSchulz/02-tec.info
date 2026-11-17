@@ -195,7 +195,6 @@ function selecionarTopico(topico) {
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.4s ease;
-  /* 👈 esse tempo é o mesmo do setTimeout */
 }
 
 .slide-fade-enter-from,
@@ -210,5 +209,45 @@ function selecionarTopico(topico) {
   opacity: 1;
   max-height: 300px;
   transform: translateY(0);
+}
+@media (max-width: 767px) and (min-width: 360px) {
+  .assuntoFauna {
+    & .titulo {
+      padding: 20px 0;
+      text-align: center;
+
+      & h2 {
+        font-size: 3rem;
+      }
+    }
+    & .informacoes {
+      min-height: auto;
+
+      & .lista {
+        margin: 10px;
+
+        & ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          & li {
+            font-size: 20px;
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 15px;
+            background-color: rgba(144, 224, 239, 0.3);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-align: center;
+            overflow: hidden;
+          }
+        } 
+      }
+    }
+  }
 }
 </style>
