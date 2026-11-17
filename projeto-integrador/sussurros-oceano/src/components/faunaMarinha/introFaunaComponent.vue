@@ -25,4 +25,20 @@
     margin: 2vw 4vw;
   }
 }
+/* ====================================
+              TABLETS
+===================================== */
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .intro {
+    padding: 20px;
+    & h2{
+      font-size: 30px;
+    }
+    & p{
+      font-size: 20px;
+      margin: 2vw 4vw;
+    }
+  }
+}
 </style>

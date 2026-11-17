@@ -37,4 +37,31 @@
   }
 
 }
+/* ====================================
+              TABLETS
+===================================== */
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .maisSobre {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    & .texto {
+      width: 100%;
+      margin: 0;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    & .img {
+      margin: 30px 0;
+      & img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
 </style>

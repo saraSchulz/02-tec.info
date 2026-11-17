@@ -47,4 +47,9 @@
     }
   }
 }
+@media (max-width: 1100px) and (min-width: 768px) {
+  section.select {
+    padding: 40px 20px;
+  }
+}
 </style>

@@ -186,4 +186,17 @@ div.linha {
 .menu-list a:hover {
   color: #000000;
 }
+@media (max-width: 1100px) and (min-width: 768px) {
+  header {
+    padding: 10px 10px;
+  }
+
+  .menu-icon {
+    margin: 0 10px;
+  }
+
+  .menu-list a {
+    font-size: 1.2rem;
+  }
+}
 </style>

@@ -34,7 +34,7 @@
 
   & .texto {
     min-height: 90vh;
-  width: 100%;
+    width: 100%;
     background: url('/public/fundo.png') no-repeat center center/cover;
     box-shadow: 0 0 75px rgba(0, 0, 0, 0.8);
     display: flex;
@@ -64,5 +64,37 @@
 
   }
 
+}
+/* ====================================
+              TABLETS
+===================================== */
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .nossoObjetivo {
+  
+    & .titulo {
+      font-size: 30px;
+    }
+    & .texto {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      min-height: auto;
+      & .text {
+        width: 90%;
+        font-size: 2rem;
+      }
+      & .img {
+        width: 90%;
+        margin: 20px 0;
+        & img{
+          width: 50%;
+          height: auto;
+        }
+      }
+    }
+  }
 }
 </style>

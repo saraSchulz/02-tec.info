@@ -43,7 +43,7 @@ onBeforeUnmount(() => {
       Sussuros do Oceano
     </h2>
     <div class="maior">
-      <div class="carousel">
+      <div class="carrossel">
         <div class="slides">
           <button class="btn prev" @click="prevSlide(); resetInterval()"><i
             class="mdi mdi-skip-previous-circle-outline"></i></button>
@@ -110,7 +110,7 @@ onBeforeUnmount(() => {
   }
 }
 
-.carousel {
+.carrossel {
   position: relative;
   width: 40%;
   display: flex;
@@ -192,5 +192,51 @@ onBeforeUnmount(() => {
   right: -150px;
 }
 
+/*===============================
+        Tablet
+=================================*/
+@media (max-width: 1100px) and (min-width: 768px) {
+  .sobre {
+    display: flex;
+      flex-direction: column;
+      
+    & h2 {
+      font-size: 30px;
+      top: 20px;
+      
+    }
+    & .maior {
+      flex-direction: column;
+      gap: 20px;
+      margin: 60px auto 0;
+      & .text {
+        width: 90%;
+        margin: 60px auto 0;
+
+        & p {
+          font-size: 18px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .carrossel {
+    width: 90%;
+  }
+
+  .slide {
+    width: 250px;
+    height: 150px;
+  }
+
+  .prev {
+    left: -100px;
+  }
+
+  .next {
+    right: -100px;
+  }
+}
 </style>
 

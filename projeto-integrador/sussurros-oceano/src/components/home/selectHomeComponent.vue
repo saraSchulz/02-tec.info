@@ -52,5 +52,23 @@
     }
   }
 }
+/*===============================
+        Tablet
+=================================*/
+@media (max-width: 1100px) and (min-width: 768px) {
+    section.select {
+        padding: 40px 20px;
+        & ul {
+            gap: 1rem;
+            & li {
+                font-size: 1.5rem;
+            }
+            & img {
+                height: 50px;
+            }
+        }
+    }
+
+}
+
 </style>
-2

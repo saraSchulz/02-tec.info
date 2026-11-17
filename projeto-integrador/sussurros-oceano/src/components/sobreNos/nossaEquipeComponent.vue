@@ -209,4 +209,33 @@ function voltar() {
     padding: 100px;
   }
 }
+/* ====================================
+              TABLETS
+===================================== */
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .nossoEquipe {
+    & .titulo {
+      font-size: 30px;
+    }
+    & .equipe {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      min-height: auto;
+
+      & .lista {
+        width: 100%;
+        margin: 7vh 0;
+        font-size: 20px;
+      }
+      & .detalhes {
+        width: 100%;
+        margin: 7vh 0;
+        font-size: 20px;
+      }
+    }
+  }
+}
 </style>
