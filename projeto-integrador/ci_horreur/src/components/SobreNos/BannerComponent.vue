@@ -34,4 +34,14 @@ h2{
   font-size: 5rem;
   color: #F81F3E;
 }
+@media (max-width: 1100px) and (min-width: 768px) {
+  h2 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 767px) and (min-width: 360px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
 </style>

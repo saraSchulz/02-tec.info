@@ -69,7 +69,7 @@
     align-items: center;
     display: flex;
     justify-content: space-around;
-    
+
 
     & .membro {
       display: flex;
@@ -157,5 +157,36 @@
 .space{
   width: 100%;
   padding: 4rem 0;
+}
+@media (max-width: 767px) and (min-width: 360px) {
+  .equipe {
+    & .titulo {
+      font-size: 2rem;
+      text-align: center;
+      margin: 0;
+    }
+    & .nossaEquipe {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      & .membro {
+        margin: 20px 0;
+        & h3{
+          font-size: 1.5rem;
+        }
+        & label{
+          font-size: 1.2rem;
+        }
+        & .sobre {
+          & p{
+            font-size: 16px;
+            & .resposta {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </style>

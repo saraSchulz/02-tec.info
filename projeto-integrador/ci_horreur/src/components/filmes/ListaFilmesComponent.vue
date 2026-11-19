@@ -85,6 +85,8 @@ function openMovie(movieId) {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
 
     & :hover {
           transform: scale(1.1);
@@ -137,6 +139,62 @@ function openMovie(movieId) {
       }
     }
   }
+
+}
+@media (max-width: 1100px) and (min-width: 768px) {
+  
+    .movie-card{
+      width: 200px;
+      & .img {
+        height: 70%;
+      }
+      & .movie-details {
+        padding: 10px;
+        text-align: center;
+
+        & .movie-title {
+          font-size: 20px;
+          font-weight: bold;
+          line-height: 18px;
+        }
+
+        & .movie-rating{
+          font-family: 25px;
+          color: #F81F3E;
+
+        }
+        &.movie-release {
+          font-size: 25px;
+        }
+      }
+    }
+}
+@media (max-width: 767px) and (min-width: 360px) {
+    .movie-card{
+      width: 150px;
+      & .img {
+        height: 70%;
+      }
+      & .movie-details {
+        padding: 10px;
+        text-align: center;
+
+        & .movie-title {
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 18px;
+        }
+
+        & .movie-rating{
+          font-family: 20px;
+          color: #F81F3E;
+
+        }
+        &.movie-release {
+          font-size: 20px;
+        }
+      }
+    }
 
 }
 </style>

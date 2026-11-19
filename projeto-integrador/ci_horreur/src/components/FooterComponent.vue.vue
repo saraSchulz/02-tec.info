@@ -103,4 +103,35 @@ footer {
 
   }
 }
+@media (max-width: 768px) {
+  footer {
+    & .maior {
+      flex-direction: column;
+      align-items: center;
+
+      & ul {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    & .maior {
+      & ul {
+        & li {
+          font-size: 20px;
+        }
+      }
+      .centro{
+        & .desenvolvido{
+          font-size: 15px;
+        }
+        & .direitos{
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
 </style>

@@ -148,4 +148,46 @@ onMounted(async () => { await movieStore.getMovieDetail(props.movieId); });
     padding: 5px;
   }
 }
+@media (max-width: 1100px) and (min-width: 768px) {
+  
+  .classificacao {
+      font-size: 15px;
+      padding: 2px 5px;
+    }
+  .content{
+    flex-direction: column;
+    & .details{
+      width: 100%;
+      & h1{
+        font-size: 50px;
+      }
+      & .snp{
+        font-size: 40px;
+      }
+      & p{
+        font-size: 35px;
+        width: 80%;
+
+      }
+    }
+}
+}
+@media (max-width: 767px) and (min-width: 360px) {
+  .content{
+    flex-direction: column;
+    & .details{
+      width: 100%;
+      & h1{
+        font-size: 40px;
+      }
+      & .snp{
+        font-size: 30px;
+      }
+      & p{
+        font-size: 20px;
+        width: 90%;
+      }
+    }
+  }
+}
 </style>

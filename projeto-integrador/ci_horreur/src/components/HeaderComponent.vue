@@ -172,4 +172,23 @@ div.linha {
 .spaceHeader{
     padding: 100px;
 }
+@media (max-width: 768px) {
+    .spaceHeader{
+        padding: 100px;
+    }
+    .overlay {
+        width: 50%;
+        max-width: none;
+    }
+}
+@media (max-width: 480px) {
+    .spaceHeader{
+        padding: 80px;
+    }
+    .overlay {
+        width: 70%;
+        max-width: none;
+    }
+
+}
 </style>
