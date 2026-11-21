@@ -135,4 +135,25 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
   font-size: 1.05rem;
   color: #532222;
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .cart-item { gap: 14px; align-items: flex-start; flex-wrap: wrap; padding: 18px 0; }
+  .product-info { flex: 1 1 65%; gap: 14px; min-width: 0; }
+  .item-capa { width: 78px; height: 112px; flex-shrink: 0; }
+  .item-titulo { font-size: 1.05rem; overflow-wrap: anywhere; }
+  .quantity-container { flex: 1 1 100%; justify-content: flex-start; }
+  .item-subtotal { flex: 1 1 auto; text-align: left; font-size: 1rem; }
+}
+@media (max-width: 480px) {
+  .cart-item { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+  .product-info { grid-column: 1 / -1; gap: 12px; }
+  .text-details { min-width: 0; }
+  .item-titulo { font-size: 1rem; }
+  .item-autor, .item-preco { font-size: .85rem; }
+  .quantity-container { grid-column: 1; flex: unset; }
+  .quantity-selector { padding: 6px 10px; gap: 10px; box-shadow: 0 0 5px rgba(0,0,0,.2); }
+  .item-subtotal { grid-column: 2; text-align: right; align-self: center; }
+}
+
 </style>

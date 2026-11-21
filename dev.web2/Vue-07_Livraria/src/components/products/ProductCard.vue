@@ -87,4 +87,18 @@ const abrirLivro = () => {
   }
 
 }
+
+/* RESPONSIVIDADE */
+.product-card { min-width: 0; width: 100%; box-sizing: border-box; margin: 0; }
+.product-card img { aspect-ratio: 3 / 4; object-fit: contain; }
+.product-card button { justify-content: center; width: 100%; }
+.product-card .product-title { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .product-card { padding: 8px; }
+  .product-card .product-title { font-size: 1.05rem; }
+  .product-card .product-author { font-size: .9rem; }
+  .product-card .product-price { font-size: 1.1rem; }
+  .product-card button { padding: 10px 8px; font-size: .9rem; }
+}
+
 </style>

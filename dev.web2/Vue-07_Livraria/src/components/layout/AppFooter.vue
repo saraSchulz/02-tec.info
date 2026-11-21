@@ -94,4 +94,23 @@ footer {
     margin-top: 10px;
   }
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  footer { padding: 35px 24px; box-sizing: border-box; }
+  footer .footer-content { max-width: 100%; gap: 28px; }
+  footer .redes { font-size: 34px; }
+  footer .contato { font-size: 17px; }
+  footer .contato p { overflow-wrap: anywhere; }
+}
+@media (max-width: 520px) {
+  footer { padding: 28px 16px; }
+  footer .footer-content { flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+  footer .redes { justify-content: center; }
+  footer .contato { text-align: center; font-size: 15px; }
+  footer .contato h2 { font-size: 1.3rem; }
+  footer .contato p { margin: 12px 0; }
+  footer .direitos { font-size: 12px; }
+}
+
 </style>

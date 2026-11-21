@@ -92,4 +92,24 @@ const book = computed(() =>
   }
 }
 
+
+/* RESPONSIVIDADE */
+@media (max-width: 800px) {
+  .book { gap: 28px; padding: 30px 24px; }
+  .book .left img { width: min(230px, 100%); }
+  .book .right h1 { font-size: 1.8rem; }
+  .book .right h2 { font-size: 1.5rem; }
+}
+@media (max-width: 600px) {
+  .book { flex-direction: column; align-items: center; padding: 24px 16px; gap: 24px; }
+  .book .left { margin-top: 0; text-align: center; width: 100%; }
+  .book .left img { width: min(220px, 70vw); max-width: 100%; }
+  .book .right { width: 100%; }
+  .book .right h1 { font-size: 1.6rem; text-align: center; margin: 0 0 12px; }
+  .book .right h2 { font-size: 1.25rem; text-align: center; margin: 0 0 16px; }
+  .book .right p { font-size: 1rem; line-height: 1.6; }
+  .book .right .price { font-size: 1.3rem; }
+  .book .right button { width: 100%; max-width: 260px; align-self: center; }
+}
+
 </style>

@@ -141,4 +141,16 @@ const removeQuantity = (item) => {
 .btn-continue:hover {
   background-color: #54282d;
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  .empty-cart-message { padding: 24px 16px; text-align: center; min-height: 55vh; box-sizing: border-box; }
+  .empty-cart-message h2 { font-size: 1.5rem; }
+  .empty-cart-message p { font-size: 1rem; line-height: 1.5; }
+  .btn-continue { width: min(100%, 300px); padding: 12px 18px; }
+}
+@media (max-width: 380px) {
+  .empty-cart-message h2 { font-size: 1.3rem; }
+}
+
 </style>

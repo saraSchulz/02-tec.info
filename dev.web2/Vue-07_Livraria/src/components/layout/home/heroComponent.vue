@@ -90,4 +90,28 @@
     }
   }
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .hero { gap: 24px; padding: 24px 4vw; }
+  .hero .hero-content { width: 55%; gap: 16px; }
+  .hero h2 { font-size: 2.2rem; }
+  .hero .hero-image { width: 45%; padding-right: 0; }
+}
+@media (max-width: 650px) {
+  .hero { flex-direction: column; align-items: stretch; padding: 24px 18px; }
+  .hero .hero-content { width: 100%; padding-right: 0; gap: 14px; }
+  .hero .hero-content h3.outlined { padding: 10px; font-size: .9rem; }
+  .hero h2 { font-size: 1.8rem; line-height: 1.2; margin: 0; }
+  .hero .hero-content p { font-size: 1rem; line-height: 1.6; margin: 0; }
+  .hero .hero-content button { max-width: 100%; }
+  .hero .hero-image { width: 100%; text-align: center; padding: 0; }
+  .hero .hero-image img { width: min(100%, 420px); }
+}
+@media (max-width: 380px) {
+  .hero { padding: 20px 14px; }
+  .hero h2 { font-size: 1.55rem; }
+  .hero .hero-content button { width: 100%; }
+}
+
 </style>

@@ -95,4 +95,12 @@ defineProps({
 .btn-checkout:active {
   transform: scale(0.98);
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 650px) {
+  .cart-summary { width: 100%; max-width: none; box-sizing: border-box; padding: 22px 18px; border-radius: 14px; box-shadow: 0 0 20px rgba(0,0,0,.2); }
+  .summary-title { margin-bottom: 18px; }
+  .summary-row { gap: 12px; font-size: .95rem; }
+}
+
 </style>

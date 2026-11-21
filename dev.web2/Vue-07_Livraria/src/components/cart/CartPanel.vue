@@ -202,4 +202,30 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
   padding: 20px 0;
   width: 100%;
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .cart-page { padding: 40px 18px; }
+  .footer-layout-container { gap: 28px; margin-top: 36px; }
+}
+@media (max-width: 650px) {
+  .cart-page { padding: 28px 14px; }
+  .cart-title { font-size: 1.7rem; margin-bottom: 24px; }
+  .cart-header { font-size: .9rem; }
+  .header-titulo { flex: 2; }
+  .header-quantidade { flex: 1; }
+  .header-subtotal { flex: 1; }
+  .footer-layout-container { flex-direction: column; gap: 28px; margin-top: 24px; }
+  .cart-footer-actions { width: 100%; gap: 20px; }
+  .coupon-section { max-width: none; gap: 8px; }
+  .coupon-input { min-width: 0; padding: 10px; }
+  .btn-coupon { padding: 10px 12px; white-space: normal; }
+  .custom-summary { align-self: stretch; }
+}
+@media (max-width: 380px) {
+  .cart-header { font-size: .78rem; }
+  .coupon-section { flex-direction: column; }
+  .btn-coupon { width: 100%; }
+}
+
 </style>

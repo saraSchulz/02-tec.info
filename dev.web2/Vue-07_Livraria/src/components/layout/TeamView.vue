@@ -220,4 +220,31 @@ function voltar() {
     }
   }
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+  .nossoEquipe .titulo { font-size: 26px; margin: 24px 0; }
+  .nossoEquipe .equipe { gap: 24px; padding: 18px 12px; box-sizing: border-box; }
+  .nossoEquipe .lista ul li { padding: 8px 24px; font-size: 1.05rem; }
+  .nossoEquipe .detalhes h3 { font-size: 1.7rem; }
+  .nossoEquipe .detalhes p { font-size: 1.05rem; overflow-wrap: anywhere; }
+}
+@media (max-width: 600px) {
+  .nossoEquipe .titulo { font-size: 22px; }
+  .nossoEquipe .equipe { min-height: 55vh; flex-direction: column; gap: 0; padding: 20px 12px; }
+  .nossoEquipe .lista { width: 100%; flex: 1 1 auto; transform: none !important; }
+  .nossoEquipe .lista.ativo { display: none; }
+  .nossoEquipe .lista h3 { font-size: 1.3rem; }
+  .nossoEquipe .lista ul { width: 100%; padding: 0; }
+  .nossoEquipe .lista ul li { width: min(100%, 340px); box-sizing: border-box; margin: 8px 0; padding: 10px 14px; font-size: 1rem; }
+  .nossoEquipe .lista ul li.selecionado { transform: none; }
+  .nossoEquipe .detalhes { width: 100%; flex: 1 1 auto; padding: 16px 8px; box-sizing: border-box; }
+  .nossoEquipe .detalhes h3 { font-size: 1.5rem; margin-bottom: 12px; overflow-wrap: anywhere; }
+  .nossoEquipe .detalhes p { font-size: 1rem; }
+  .nossoEquipe .detalhes button { margin: 12px 0; }
+  .nossoEquipe .space { margin: 28px 12px; }
+  .nossoEquipe .space a { font-size: 1rem; text-align: center; }
+  .nossoEquipe .space a h1 .logo { width: 120px; height: auto; }
+}
+
 </style>

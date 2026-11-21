@@ -48,4 +48,20 @@ const handleAddToCart = (product) => {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 30px;
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .product-list-container { padding: 32px 18px; }
+  .products-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 22px; }
+  .store-title { font-size: 1.8rem; }
+}
+@media (max-width: 600px) {
+  .product-list-container { padding: 24px 14px; }
+  .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .store-title { font-size: 1.5rem; margin-bottom: 20px; }
+}
+@media (max-width: 360px) {
+  .products-grid { gap: 8px; }
+}
+
 </style>
